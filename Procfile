@@ -1,1 +1,1 @@
-web: gunicorn anotheroaktree.wsgi --log-file -
+web: gunicorn dummy.wsgi --log-file -
