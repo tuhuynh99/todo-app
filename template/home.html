@@ -1,0 +1,21 @@
+{% load socialaccount %}
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started with Django and Webpack</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }} !! </p>
+    <p>Welcome {{ user}} !! </p>
+
+    <p>Welcome {{ user.email }} !! </p>
+
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Sign Up</a>
+    {% endif %}
+  </body>
+</html>
+<!-- 
+743547745613-46fesv8rv6kq075idhu1ucjs58ljaaca.apps.googleusercontent.com
+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 -->
