@@ -10,9 +10,11 @@
     <p>Welcome {{ user}} !! </p>
 
     <p>Welcome {{ user.email }} !! </p>
+    <a href="{% url 'account_logout' %}">Sign Up</a>
 
     {% else %}
     <a href="{% provider_login_url 'google' %}">Sign Up</a>
+
     {% endif %}
   </body>
 </html>
