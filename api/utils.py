@@ -1,10 +1,11 @@
 from rest_framework.response import Response
-from .models import Todo
+from todo.models import Todo
 from .serializers import TodoSerializer
 
 
 def getTodoList(request):
-    todos = Todo.objects.all()
+    uid = request.user.id
+    todos = Todo.objects.filter(user=uid)
     serializer = TodoSerializer(todos, many=True)
     return Response(serializer.data)
 
@@ -16,11 +17,15 @@ def getTodoDetail(request, pk):
 
 
 def createTodo(request):
+    user = request.user
+
     data = request.data
-    Todo = Todo.objects.create(
-        body=data['body']
+    todo = Todo.objects.create(
+        content=data['content'],
+        user=user,
+        complete=data['complete']
     )
-    serializer = TodoSerializer(Todo, many=False)
+    serializer = TodoSerializer(todo, many=False)
     return Response(serializer.data)
 
 def updateTodo(request, pk):

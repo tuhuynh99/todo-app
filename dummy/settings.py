@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # user app
+    'todo',
     'user',
     'api.apps.ApiConfig',
     'rest_framework',
@@ -68,6 +69,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 ROOT_URLCONF = 'dummy.urls'
+
 
 
 TEMPLATES = [

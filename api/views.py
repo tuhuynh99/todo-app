@@ -1,7 +1,7 @@
 import json
 
-from .utils import getTodoList, getTodoDetail, updateTodo, deleteTodo
-from .models import Todo
+from .utils import getTodoList, getTodoDetail, updateTodo, deleteTodo, createTodo
+from todo.models import Todo
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from .serializers import TodoSerializer
@@ -9,11 +9,12 @@ from .serializers import TodoSerializer
 
 @api_view(['GET', 'POST'])
 def TodoListView(request):
+ 
         if request.method == 'GET':
             return getTodoList(request)
 
         if request.method == 'POST':
-            pass
+            return createTodo(request)
 
 @api_view(['GET','PUT', 'DELETE'])
 def TodoView(request, id):
