@@ -5,17 +5,20 @@
     <title>Getting Started with Django and Webpack</title>
   </head>
   <body>
+    {% block content %}
     {% if user.is_authenticated %}
     <p>Welcome {{ user.username }} !! </p>
     <p>Welcome {{ user}} !! </p>
 
     <p>Welcome {{ user.email }} !! </p>
-    <a href="{% url 'account_logout' %}">Sign Up</a>
+    <a href="{% url 'account_logout' %}">Logout</a>
 
     {% else %}
-    <a href="{% provider_login_url 'google' %}">Sign Up</a>
+    <a href="{% url 'account_login' %}">Sign In</a>
+    <a href="{% url 'account_signup' %}">Sign Up</a>
 
     {% endif %}
+    {% endblock %}
   </body>
 </html>
 <!-- 
