@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xv*f&a-^*4(26!i#h@klvmt%bn19-iwq&_f5$xj4_o)wyl09x9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['anotheroaktree.herokuapp.com', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['anotheroaktree.herokuapp.com', '0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
