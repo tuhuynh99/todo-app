@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     # user app
     'user',
+    'api.apps.ApiConfig',
+    'rest_framework',
 
     # allauth
     'allauth', 

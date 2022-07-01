@@ -5,9 +5,14 @@
     <title>Getting Started with Django and Webpack</title>
   </head>
   <body>
-    <div id="root" />
+    <div id="root" ></div>
     <!-- load your js bundle to django template -->
     <h2> Welcome to my website!</h2>
+
+    {% if user.is_authenticated %}
+    <p>Welcome {{ user.username }} !! </p>
+    {% endif %}    <h2></h2> 
+
     <script src="{% static 'index-bundle.js' %}"></script>
   </body>
 </html>

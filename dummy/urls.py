@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', TemplateView.as_view(template_name='index.html'), name='index'),
     path('accounts/', include('allauth.urls')),
     path('home/', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('test/', TemplateView.as_view(template_name='user/login.html'), name='user_login')
+    path('test/', TemplateView.as_view(template_name='user/login.html'), name='user_login'),
+    path('api/', include('api.urls')),
 ]   
