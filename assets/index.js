@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom";
-import GoogleSignIn from './javascripts/login.js'
+import GoogleSignIn from './javascripts/pages/login.js'
 ReactDOM.render(
   <div>
     <GoogleSignIn />

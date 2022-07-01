@@ -14,8 +14,6 @@ function Login() {
     buttonText="Login"
     onSuccess={responseGoogle}
     onFailure={responseGoogle}
-    // cookiePolicy={'single_host_origin'}
-    redirectUrli='http://localhost:3000/'
   />
     </div>
   );
