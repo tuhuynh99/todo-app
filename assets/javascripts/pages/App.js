@@ -6,7 +6,7 @@ import GoogleLogin from "./login.js";
 
 // router
 
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // style
 import "../../css/App.css";
@@ -15,8 +15,10 @@ function App() {
   return (
     <Router>
       <NavBar />
-      <Route path="/index" exact component={Home} />
-      <Route path="/login" component={GoogleLogin} />
+      <Routes>
+        <Route path="/index" exact component={Home} />
+        <Route path="/login" component={GoogleLogin} />
+      </Routes>
     </Router>
   );
 }
