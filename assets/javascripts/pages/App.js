@@ -16,8 +16,8 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/index" exact component={Home} />
-        <Route path="/login" component={GoogleLogin} />
+        <Route path="home/" exact element={<Home />} />
+        <Route path="login/" element={<GoogleLogin />} />
       </Routes>
     </Router>
   );
