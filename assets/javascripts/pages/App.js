@@ -17,7 +17,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="home/" exact element={<Home />} />
-        <Route path="login/" element={<GoogleLogin />} />
+        {/* <Route path="/" element={<GoogleLogin />} /> */}
       </Routes>
     </Router>
   );

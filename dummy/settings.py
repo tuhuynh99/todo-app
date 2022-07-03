@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'allauth', 
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
 
 ]
@@ -101,6 +100,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+
 }
 
 
@@ -162,6 +162,8 @@ SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'NONE'
 
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
