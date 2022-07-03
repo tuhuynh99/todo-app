@@ -159,7 +159,15 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-ACCOUNT_EMAIL_VERIFICATION = 'NONE'
+# EMAIL_BACKEND so allauth can proceed to send confirmation emails
+# ONLY for development/testing use console 
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+# use email as the primary identifier
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
