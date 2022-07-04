@@ -2,12 +2,33 @@ import React, { useState } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 export default function TodoForm() {
+  // define function for getting a cookie value
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  // get the 'csrftoken' to be used in post request
+  const csrftoken = getCookie("csrftoken");
+
   let handleAddTodo = (e) => {
     let content = document.getElementById("new-content").value;
-    let complete = document.getElementById("complete-new").value;
+    let complete = document.getElementById("complete-new").checked;
+
     let todo = {
       content: content,
-      complete: complete === "on" ? true : false,
+      complete: complete,
     };
 
     console.log(todo);
@@ -16,9 +37,12 @@ export default function TodoForm() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-CSRFToken": csrftoken,
+        mode: "same-origin",
       },
       body: JSON.stringify(todo),
     });
+    window.location.reload(false);
   };
 
   return (
@@ -28,7 +52,7 @@ export default function TodoForm() {
           <InputGroup className="mb-3">
             <InputGroup.Checkbox
               aria-label="Checkbox for following text input"
-              defaultChecked={true}
+              defaultChecked={false}
               id="complete-new"
             />
             <FormControl
