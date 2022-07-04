@@ -172,6 +172,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+LOGIN_URL = '/accounts/login/'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {

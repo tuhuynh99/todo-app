@@ -8,7 +8,7 @@ module.exports = {
   // },
   entry: {
     index: "./assets/index.js",
-    login: "./assets/login.js",
+    not_auth: "./assets/landing.js",
   },
   output: {
     path: path.resolve(__dirname, "static"),

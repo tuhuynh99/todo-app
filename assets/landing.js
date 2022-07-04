@@ -5,7 +5,7 @@ import HomeView from "./javascripts/pages/home_view.js";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HomeView />
+    <LandingPage />
   </React.StrictMode>,
   document.getElementById("home")
 );

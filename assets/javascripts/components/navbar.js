@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
-import { GoogleLogin } from "react-google-login";
 
 export default function NavBar() {
   return (
