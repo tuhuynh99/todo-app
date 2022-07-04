@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xv*f&a-^*4(26!i#h@klvmt%bn19-iwq&_f5$xj4_o)wyl09x9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['anotheroaktree.herokuapp.com', '0.0.0.0', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['anotheroaktree.herokuapp.com', '0.0.0.0', '127.0.0.1', 'localhost', 'satao.db.elephantsql.com']
 
 
 # Application definition
@@ -97,8 +97,12 @@ WSGI_APPLICATION = 'dummy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cdkhykag',
+        'USER': 'cdkhykag',
+        'PASSWORD': '4zB74Dh0rmRzrQaw1SQL09md-CctODVG',
+        'HOST': 'satao.db.elephantsql.com',
+        'PORT': '',
     }
 
 }
