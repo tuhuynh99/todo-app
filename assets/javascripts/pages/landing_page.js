@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <div>
       <NavBar />
-      <h1>Please Login To Using Todo List App</h1>
+      <h3 className="px-3">Please Login To Using Todo List App</h3>
     </div>
   );
 }
