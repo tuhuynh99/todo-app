@@ -2,6 +2,10 @@ import React from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 export default function TodoForm() {
+
+  let handleAddTodo = () {
+    
+  }
   return (
     <div>
       <div className="container-fluid">
@@ -9,10 +13,10 @@ export default function TodoForm() {
           <InputGroup className="mb-3">
             <InputGroup.Checkbox
               aria-label="Checkbox for following text input"
-              checked
+              defaultChecked={true}
             />
             <FormControl aria-label="Text input with checkbox" />
-            <Button variant="outline-secondary" id="button-addon1">
+            <Button variant="outline-secondary" id="add-todo-button" onClick={}>
               Add Todo
             </Button>
           </InputGroup>

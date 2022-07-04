@@ -26,12 +26,8 @@ export default function TodoList() {
           <div className="col">
             <h3 className="">Your Todo List</h3>
           </div>
-          <div className="col-auto">
-            <Button variant="outline-primary">Add Todo</Button>
-          </div>
         </div>
       </div>
-
       <div>
         {todos.map((props, index) => (
           <Todo

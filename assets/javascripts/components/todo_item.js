@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 import CheckBox from "./checkbox.js";
 
 export default class Todo extends React.Component {
@@ -13,19 +13,22 @@ export default class Todo extends React.Component {
       <div>
         <div className="container-fluid">
           <div className="row my-1">
-            <CheckBox complete={this.props.complete} />
-            <div className="col">{this.props.content}</div>
-
-            <div className="col-auto">
-              <div className="row ">
-                <div class="col">
-                  <Button variant="outline-primary ">Add Todo</Button>
-                </div>
-                <div class="col">
-                  <Button variant="outline-primary">Add Todo</Button>
-                </div>
-              </div>
-            </div>
+            <InputGroup className="mb-1">
+              <InputGroup.Checkbox
+                aria-label="Checkbox for following text input"
+                defaultChecked={this.props.complete}
+              />
+              <FormControl
+                aria-label="Text input with checkbox"
+                defaultValue={this.props.content}
+              />
+              <Button variant="outline-primary" id="update-button">
+                Update
+              </Button>
+              <Button variant="outline-primary" id="delete-button">
+                Delete
+              </Button>
+            </InputGroup>
           </div>
         </div>
       </div>
