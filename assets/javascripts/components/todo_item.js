@@ -6,7 +6,6 @@ import { unmountComponentAtNode } from "react-dom";
 export default class Todo extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);

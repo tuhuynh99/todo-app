@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 
-export default function TodoForm() {
+export default function TodoForm(props) {
   // define function for getting a cookie value
   function getCookie(name) {
     let cookieValue = null;
@@ -42,14 +42,23 @@ export default function TodoForm() {
       },
       body: JSON.stringify(todo),
     });
-    window.location.reload(false);
+    // clean up the todo form
+    // reset the form
+    document.getElementById("new-content").value = "";
+    document.getElementById("complete-new").checked = false;
+    // make change to the state of todo_list
+    // to make it rerender
+    props.add((count) => {
+      console.log(count);
+      return count + 1;
+    });
   };
 
   return (
     <div>
       <div className="container-fluid">
         <div className="row my-1">
-          <InputGroup className="mb-3">
+          <InputGroup className="mb-3" id="add-todo-form">
             <InputGroup.Checkbox
               aria-label="Checkbox for following text input"
               defaultChecked={false}
